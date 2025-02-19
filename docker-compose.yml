@@ -1,0 +1,8 @@
+services:
+  mongo:
+    image: mongo:8.0.3
+    environment:
+      - MONGO_INITDB_ROOT__USERNAME=root
+      - MONGO_INITDB_ROOT__PASSWORD=root
+    ports:
+      - 27017:27017
