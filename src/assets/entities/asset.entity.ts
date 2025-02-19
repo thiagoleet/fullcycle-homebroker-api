@@ -14,7 +14,7 @@ export class Asset {
   @Prop()
   name: string;
 
-  @Prop()
+  @Prop({ unique: true })
   symbol: string;
 
   @Prop()
