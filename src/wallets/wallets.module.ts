@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
 import { WalletsService } from './wallets.service';
 import { WalletsController } from './wallets.controller';
 import { WalletSchema } from './entities/wallet.entity';
-import { MongooseModule } from '@nestjs/mongoose';
+import { WalletAssetSchema } from './entities/wallet-asset.entity';
 
 @Module({
   imports: [
@@ -10,6 +11,10 @@ import { MongooseModule } from '@nestjs/mongoose';
       {
         name: 'Wallet',
         schema: WalletSchema,
+      },
+      {
+        name: 'WalletAsset',
+        schema: WalletAssetSchema,
       },
     ]),
   ],
