@@ -29,9 +29,12 @@ export class WalletsService {
   }
 
   findOne(id: string) {
-    this.walletAssetSchema
-      .findOne({ wallet: id })
-      .populate(['wallet', 'asset']);
+    this.walletSchema.findById(id).populate([
+      {
+        path: 'assets',
+        populate: ['asset'],
+      },
+    ]);
 
     return this.walletSchema.findById(id);
   }
